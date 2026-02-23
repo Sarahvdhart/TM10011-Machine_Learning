@@ -4,9 +4,19 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-#inlezen van de dataset
-df = pd.read_csv("Datasets.csv")
-print(df)
+#dataset werken
+import os
+import pandas as pd
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "Datasets.csv")
+
+df = pd.read_csv(csv_path)
+print(df.head())
+
+# #inlezen van de dataset
+# df = pd.read_csv("Datasets.csv")
+# print(df)
 
 #aantal dataset
 aantal_datasets = df["dataset"].count()
